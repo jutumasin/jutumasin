@@ -10,7 +10,6 @@
       --pink:#ff4da6; --pink2:#ff1f8f;
       --text:#ffe9f5; --muted:#d9a9c6;
       --card:#12000f; --card2:#1b0018;
-      --shadow: 0 26px 80px rgba(0,0,0,.75);
       --r:22px;
     }
     *{box-sizing:border-box}
@@ -19,7 +18,7 @@
       margin:0; height:100vh;
       display:flex; align-items:center; justify-content:center;
       padding:0;
-      font-family: "Segoe UI Variable Display","Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+      font-family:"Segoe UI Variable Display","Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
         radial-gradient(1200px 800px at 15% 10%, rgba(255,77,166,.22), transparent 58%),
@@ -28,30 +27,34 @@
       overflow:hidden;
     }
 
+    /* Taustasüdamed: background-position liigub üles (stabiilsem kui transform). */
     .bgHearts{
-      position:fixed; inset:-35%;
+      position:fixed; inset:-45%;
       pointer-events:none;
-      opacity:.13;
-      filter: blur(.35px);
-      animation: floatUp 170s linear infinite;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' viewBox='0 0 640 640'%3E%3Cg fill='%23ff4da6' fill-opacity='0.25'%3E%3Ctext x='60' y='360' font-size='220'%3E%E2%99%A5%3C/text%3E%3Ctext x='360' y='260' font-size='160'%3E%E2%99%A5%3C/text%3E%3Ctext x='260' y='580' font-size='190'%3E%E2%99%A5%3C/text%3E%3C/g%3E%3C/svg%3E");
-      background-size: 640px 640px;
+      opacity:.11;
+      filter: blur(.7px);
       background-repeat: repeat;
-    }
-    .bgHearts.bg2{
-      opacity:.09;
-      filter: blur(.5px);
-      animation-duration: 240s;
-      transform: translateY(12%) scale(1.25);
       background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='860' height='860' viewBox='0 0 860 860'%3E%3Cg fill='%23ff1f8f' fill-opacity='0.18'%3E%3Ctext x='90' y='500' font-size='320'%3E%E2%99%A5%3C/text%3E%3Ctext x='520' y='380' font-size='220'%3E%E2%99%A5%3C/text%3E%3Ctext x='390' y='820' font-size='260'%3E%E2%99%A5%3C/text%3E%3C/g%3E%3C/svg%3E");
-      background-size: 860px 860px;
-      background-repeat: repeat;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='980' height='980' viewBox='0 0 980 980'%3E%3Cg fill='%23ff4da6' fill-opacity='0.18'%3E%3Ctext x='110' y='560' font-size='320'%3E%E2%99%A5%3C/text%3E%3Ctext x='620' y='430' font-size='230'%3E%E2%99%A5%3C/text%3E%3Ctext x='470' y='910' font-size='270'%3E%E2%99%A5%3C/text%3E%3C/g%3E%3C/svg%3E");
+      background-size: 980px 980px;
+      will-change: background-position;
+      animation: heartsUp 220s linear infinite;
     }
-    @keyframes floatUp{
-      from{ transform: translateY(18%); }
-      to{ transform: translateY(-18%); }
+    .bgHearts2{
+      position:fixed; inset:-55%;
+      pointer-events:none;
+      opacity:.07;
+      filter: blur(1.05px);
+      background-repeat: repeat;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1380' height='1380' viewBox='0 0 1380 1380'%3E%3Cg fill='%23ff1f8f' fill-opacity='0.12'%3E%3Ctext x='140' y='790' font-size='520'%3E%E2%99%A5%3C/text%3E%3Ctext x='900' y='640' font-size='340'%3E%E2%99%A5%3C/text%3E%3Ctext x='680' y='1330' font-size='410'%3E%E2%99%A5%3C/text%3E%3C/g%3E%3C/svg%3E");
+      background-size: 1380px 1380px;
+      will-change: background-position;
+      animation: heartsUp 330s linear infinite;
+    }
+    @keyframes heartsUp{
+      from{ background-position: 0 0; }
+      to{ background-position: 0 -2600px; }
     }
 
     .app{
@@ -67,15 +70,49 @@
       display:flex; align-items:center; justify-content:center;
       border-bottom:1px solid rgba(255,77,166,.22);
       background: linear-gradient(90deg, rgba(255,77,166,.18), rgba(0,0,0,.18));
+      min-height:64px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900; letter-spacing:.2px; font-size:18px;
+      font-weight:950;
+      letter-spacing:.7px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, rgba(255,77,166,1), rgba(255,233,245,.95), rgba(255,31,143,1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 10px 40px rgba(255,77,166,.12);
+      font-size:22px;
+      transition: font-size 140ms ease, transform 140ms ease;
+    }
+    body[data-view="menu"] .brand{
+      font-size:44px; /* topelt suurem pealehel */
+      transform: translateY(1px);
     }
 
     main{flex:1; display:flex; flex-direction:column; min-height:0}
     .screen{flex:1; display:none; padding:16px; min-height:0}
     .screen.active{display:flex; flex-direction:column; gap:14px}
+
+    .grid{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    .choice{
+      padding:16px; border-radius:var(--r);
+      background: linear-gradient(180deg, rgba(255,77,166,.10), rgba(0,0,0,.26));
+      border:1px solid rgba(255,77,166,.22);
+      cursor:pointer;
+      min-height:96px;
+      display:flex; flex-direction:column; justify-content:center;
+      transition: box-shadow 120ms ease, border-color 120ms ease, transform 120ms ease, background 120ms ease;
+    }
+    .choice:hover{
+      border-color: rgba(255,233,245,.40);
+      box-shadow: 0 0 0 2px rgba(255,233,245,.14), 0 14px 45px rgba(0,0,0,.35);
+    }
+    .choice:active{
+      background: linear-gradient(180deg, rgba(255,77,166,.06), rgba(0,0,0,.36));
+      transform: translateY(1px);
+    }
+    .choice h3{margin:0 0 8px 0; font-size:15px; font-weight:900}
+    .choice p{margin:0; color:var(--muted); font-size:12px; line-height:1.25}
 
     .row{display:flex; align-items:center; justify-content:space-between; gap:10px}
     .stat{
@@ -85,38 +122,11 @@
       font-size:12px; color:var(--muted);
       white-space:nowrap;
     }
-    .hint{font-size:12px; color:var(--muted); line-height:1.35}
 
-    .grid{display:grid; gap:12px; grid-template-columns:1fr 1fr}
-    .choice{
-      padding:16px; border-radius:var(--r);
-      background: linear-gradient(180deg, rgba(255,77,166,.10), rgba(0,0,0,.26));
-      border:1px solid rgba(255,77,166,.22);
-      cursor:pointer;
-      min-height:92px;
-      display:flex; flex-direction:column; justify-content:center;
-    }
-    .choice h3{margin:0 0 6px 0; font-size:15px; font-weight:900}
-    .choice p{margin:0; color:var(--muted); font-size:12px}
-
-    .cardArea{
-      flex:1;
-      display:flex; align-items:center; justify-content:center;
-      position:relative;
-      padding:0;
-      min-height:0;
-    }
-    .deck{
-      width:100%;
-      height:100%;
-      display:flex; align-items:center; justify-content:center;
-      position:relative;
-      min-height:0;
-    }
+    .cardArea{flex:1; display:flex; align-items:center; justify-content:center; position:relative; padding:0; min-height:0}
+    .deck{width:100%; height:100%; display:flex; align-items:center; justify-content:center; position:relative; min-height:0}
     .swipeCard{
-      width:100%;
-      max-width:520px;
-      height:100%;
+      width:100%; max-width:520px; height:100%;
       border-radius:var(--r);
       background: linear-gradient(180deg, var(--card2), var(--card));
       border:1px solid rgba(255,77,166,.30);
@@ -131,19 +141,26 @@
     .inner{
       height:100%;
       padding:26px 24px;
-      display:flex; flex-direction:column; gap:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      gap:18px;
       background:
         radial-gradient(1100px 700px at 20% 0%, rgba(255,77,166,.22), transparent 62%),
         radial-gradient(1100px 700px at 85% 20%, rgba(255,31,143,.18), transparent 62%);
     }
-    .title{font-size:52px; font-weight:950; line-height:1.0}
-    .desc{font-size:26px; color:rgba(255,233,245,.95); line-height:1.25}
+    .title{font-size:54px; font-weight:950; line-height:1.0}
+    .desc{font-size:28px; font-weight:900; color:rgba(255,233,245,.95); line-height:1.2}
     .foot{
-      margin-top:auto;
-      font-size:14px;
+      position:absolute;
+      left:24px; right:24px; bottom:18px;
+      font-size:14px; font-weight:800;
       color:var(--muted);
       border-top:1px solid rgba(255,77,166,.22);
       padding-top:14px;
+      text-align:left;
     }
 
     .stamp{
@@ -159,16 +176,26 @@
     .stamp.tagasi{color:#ff6b8b; border-color: rgba(255,107,139,.55); background: rgba(255,107,139,.10)}
     .stamp.parim{color:#ffd1ea; border-color: rgba(255,209,234,.55); background: rgba(255,209,234,.12); transform: rotate(-6deg); left:16px; right:auto}
 
-    .star{
-      position:absolute; right:14px; bottom:14px;
-      width:46px; height:46px; border-radius:999px;
+    /* Täheke on parim — peab dubleerima swipe-up tegevust. */
+    .starBtn{
+      position:absolute;
+      right:14px;
+      bottom:70px;
+      width:46px; height:46px;
+      border-radius:999px;
       display:flex; align-items:center; justify-content:center;
       border:1px solid rgba(255,209,234,.40);
-      background: rgba(0,0,0,.25);
+      background: rgba(0,0,0,.28);
       box-shadow: 0 12px 30px rgba(0,0,0,.45);
       font-size:20px;
-      pointer-events:none;
+      line-height:1;
+      padding:0;
+      cursor:pointer;
+      color:#ffd1ea;
+      z-index:5;
     }
+    .starBtn span{display:block; transform: translateY(-1px);}
+    .starBtn:active{transform: translateY(1px)}
 
     .controls{
       padding:14px 16px;
@@ -177,38 +204,32 @@
       border-top:1px solid rgba(255,77,166,.22);
       background: rgba(0,0,0,.22);
     }
-    button{
+    button.ctrl{
       appearance:none; border:none; cursor:pointer;
       border-radius:999px; padding:12px 16px;
       color:var(--text); font-weight:900;
       background: linear-gradient(180deg, rgba(255,77,166,.18), rgba(0,0,0,.25));
       border:1px solid rgba(255,77,166,.26);
       min-width:110px;
+      transition: background 120ms ease;
     }
-    button:active{transform: translateY(1px)}
-    button[disabled]{opacity:.45; cursor:default}
+    button.ctrl:active{
+      background: linear-gradient(180deg, rgba(255,77,166,.10), rgba(0,0,0,.38));
+      transform: translateY(1px);
+    }
+    button.ctrl[disabled]{opacity:.45; cursor:default}
   </style>
 </head>
-<body>
+<body data-view="menu">
   <div class="bgHearts"></div>
-  <div class="bgHearts bg2"></div>
+  <div class="bgHearts2"></div>
 
   <div class="app">
-    <header>
-      <div class="brand"><span>Jutumasin</span></div>
-    </header>
+    <header><div class="brand">Jutumasin</div></header>
 
     <main>
       <section id="menuScreen" class="screen active">
-        <div class="row">
-          <div class="stat">Vali</div>
-          <div class="stat" id="menuCounts">Ajalugu: 0 • Parimad: 0</div>
-        </div>
         <div class="grid" id="menuGrid"></div>
-        <div class="hint">
-          Mäng: vasak = <b>tagasi</b>, parem = <b>edasi</b>, üles = <b>parim</b> (⭐).<br/>
-          Ajalugu/Parimad: vasak = tagasi, parem = edasi.
-        </div>
       </section>
 
       <section id="gameScreen" class="screen">
@@ -237,38 +258,37 @@
     </main>
 
     <div class="controls" id="controls">
-      <button id="btnBack">⬅️ Tagasi</button>
-      <button id="btnMenu">☰ Menüü</button>
-      <button id="btnNext">Edasi ➡️</button>
-      <button id="btnBest">⭐ Parim</button>
+      <button class="ctrl" id="btnBack">⬅️ Tagasi</button>
+      <button class="ctrl" id="btnMenu">☰ Menüü</button>
+      <button class="ctrl" id="btnNext">Edasi ➡️</button>
     </div>
   </div>
 
   <script>
     const DECKS = {
       "Dating": [
-        { title:"Kohv ja jalutuskäik", desc:"Kiire vibe-check. Lihtne, aus, turvaline.", foot:"• Dating" },
-        { title:"Muuseum", desc:"Räägi kunstist (või vähemalt raamidest).", foot:"• Dating" },
-        { title:"Õhtune linnatiir", desc:"Tulede all on kõik natuke romantilisem.", foot:"• Dating" },
-        { title:"Kokkame koos", desc:"Kui läheb pekki, tellime pitsat.", foot:"• Dating" }
+        { title:"Kohv ja jalutuskäik", desc:"Kiire vibe-check. Lihtne, aus, turvaline.", foot:"• kohtingu küsimused" },
+        { title:"Muuseum", desc:"Räägi kunstist (või vähemalt raamidest).", foot:"• kohtingu küsimused" },
+        { title:"Õhtune linnatiir", desc:"Tulede all on kõik natuke romantilisem.", foot:"• kohtingu küsimused" },
+        { title:"Kokkame koos", desc:"Kui läheb pekki, tellime pitsat.", foot:"• kohtingu küsimused" }
       ],
       "Spicy": [
-        { title:"Salajane koht", desc:"Üks vihje. Üks sihtkoht. Üks risk.", foot:"• Spicy" },
-        { title:"Julge mäng", desc:"Küsimused, mis lähevad natuke liiga ausaks.", foot:"• Spicy" },
-        { title:"Öine sõit", desc:"Muusika põhja ja mõtted välja.", foot:"• Spicy" },
-        { title:"Üks asi", desc:"Ütle üks asi, mida sa päriselt tahad.", foot:"• Spicy" }
+        { title:"Salajane koht", desc:"Üks vihje. Üks sihtkoht. Üks risk.", foot:"• põnevamad küsimused" },
+        { title:"Julge mäng", desc:"Küsimused, mis lähevad natuke liiga ausaks.", foot:"• põnevamad küsimused" },
+        { title:"Öine sõit", desc:"Muusika põhja ja mõtted välja.", foot:"• põnevamad küsimused" },
+        { title:"Üks asi", desc:"Ütle üks asi, mida sa päriselt tahad.", foot:"• põnevamad küsimused" }
       ],
       "Couples": [
-        { title:"Pühapäeva rituaal", desc:"Loome oma väikese traditsiooni.", foot:"• Couples" },
-        { title:"Unistuste reis", desc:"Valime sihi ja hakkame koguma.", foot:"• Couples" },
-        { title:"Digipaus", desc:"Telefonid kõrvale. Meie aeg.", foot:"• Couples" },
-        { title:"Tänulikkuse ring", desc:"Ütle 3 asja, mida sa hindad.", foot:"• Couples" }
+        { title:"Pühapäeva rituaal", desc:"Loome oma väikese traditsiooni.", foot:"• paaridele küsimused" },
+        { title:"Unistuste reis", desc:"Valime sihi ja hakkame koguma.", foot:"• paaridele küsimused" },
+        { title:"Digipaus", desc:"Telefonid kõrvale. Meie aeg.", foot:"• paaridele küsimused" },
+        { title:"Tänulikkuse ring", desc:"Ütle 3 asja, mida sa hindad.", foot:"• paaridele küsimused" }
       ],
-      "Fun": [
-        { title:"Kiirchallenge", desc:"10 minutit ja 3 naljakat ülesannet.", foot:"• Fun" },
-        { title:"Karaoke duel", desc:"Halb laul on ka laul.", foot:"• Fun" },
-        { title:"Mini-piknik", desc:"Poes 5€ limiit. Loovus võidab.", foot:"• Fun" },
-        { title:"Mälumäng", desc:"Kes kaotab, teeb järgmise kohvi.", foot:"• Fun" }
+      "Party": [
+        { title:"Kiirchallenge", desc:"10 minutit ja 3 naljakat ülesannet.", foot:"• peomänguks" },
+        { title:"Karaoke duel", desc:"Halb laul on ka laul.", foot:"• peomänguks" },
+        { title:"Mini-piknik", desc:"Poes 5€ limiit. Loovus võidab.", foot:"• peomänguks" },
+        { title:"Mälumäng", desc:"Kes kaotab, teeb järgmise kohvi.", foot:"• peomänguks" }
       ]
     };
 
@@ -289,7 +309,6 @@
       history: document.getElementById("historyScreen"),
       best: document.getElementById("bestScreen"),
       menuGrid: document.getElementById("menuGrid"),
-      menuCounts: document.getElementById("menuCounts"),
       deck: document.getElementById("deck"),
       historyDeck: document.getElementById("historyDeck"),
       bestDeck: document.getElementById("bestDeck"),
@@ -302,39 +321,38 @@
       controls: document.getElementById("controls"),
       btnBack: document.getElementById("btnBack"),
       btnMenu: document.getElementById("btnMenu"),
-      btnNext: document.getElementById("btnNext"),
-      btnBest: document.getElementById("btnBest")
+      btnNext: document.getElementById("btnNext")
     };
 
-    /* Näitab õige vaate ja peidab nupuriba menüüs (menüüs peab olema puhas). */
+    /* Näitab õige vaate, peidab/kuvab alumise riba ning lülitab “menu” logo suuruse. */
     function showScreen(name){
       el.menu.classList.toggle("active", name === "menu");
       el.game.classList.toggle("active", name === "game");
       el.history.classList.toggle("active", name === "history");
       el.best.classList.toggle("active", name === "best");
       State.viewMode = name;
+      document.body.setAttribute("data-view", name);
       el.controls.style.display = (name === "menu") ? "none" : "flex";
       updateButtons();
     }
 
-    /* Loendab map'i (ajalugu/parimad) kogusummad menüü statistikaks. */
+    /* Loendab ajalugu/parimad koguarvud menüü kirjelduste jaoks. */
     function totalCount(map){
       let n=0; Object.keys(map).forEach(k => n += (map[k]?.length || 0)); return n;
     }
 
-    /* Ehitas menüü 6 valikuga: 4 pakki + Ajalugu + Parimad. */
+    /* Ehitas menüü 6 valikuga (4 pakki + ajalugu + parimad) kirjelduste põhjal. */
     function buildMenu(){
       const hTotal = totalCount(State.histories);
       const bTotal = totalCount(State.bests);
-      el.menuCounts.textContent = `Ajalugu: ${hTotal} • Parimad: ${bTotal}`;
 
       const items = [
-        { title:"Dating",  sub:"Alusta", action:()=>startGame("Dating") },
-        { title:"Spicy",   sub:"Alusta", action:()=>startGame("Spicy") },
-        { title:"Couples", sub:"Alusta", action:()=>startGame("Couples") },
-        { title:"Fun",     sub:"Alusta", action:()=>startGame("Fun") },
-        { title:"Ajalugu", sub:`Kirjeid: ${hTotal}`, action:()=>openList("history") },
-        { title:"Parimad", sub:`Kirjeid: ${bTotal}`, action:()=>openList("best") }
+        { title:"Dating",  sub:"kohtingu küsimused", action:()=>startGame("Dating") },
+        { title:"Spicy",   sub:"põnevamad küsimused", action:()=>startGame("Spicy") },
+        { title:"Couples", sub:"paaridele küsimused", action:()=>startGame("Couples") },
+        { title:"Party",   sub:"peomänguks", action:()=>startGame("Party") },
+        { title:"Ajalugu", sub:`mis sa enne swipinud oled (${hTotal})`, action:()=>openList("history") },
+        { title:"Parimad", sub:`välja valitud parimad (${bTotal})`, action:()=>openList("best") }
       ];
 
       el.menuGrid.innerHTML = "";
@@ -347,11 +365,8 @@
       });
     }
 
-    /* Seab nuppude oleku vastavalt vaatele ja positsioonile (history/best). */
+    /* Seab nupud disabled olekusse Ajalugu/Parimad vaates (et ei saaks üle piiride minna). */
     function updateButtons(){
-      const isGame = State.viewMode === "game";
-      el.btnBest.style.display = isGame ? "inline-block" : "none";
-
       if(State.viewMode === "history"){
         const list = State.histories[State.viewDeckKey] || [];
         el.btnBack.disabled = !(list.length && State.viewPos > 0);
@@ -366,7 +381,7 @@
       }
     }
 
-    /* Käivitab mängu valitud pakiga ja valmistab ajalugu/parimad konteinerid ette. */
+    /* Käivitab mängu valitud pakiga ning segab kaardid uueks läbimiseks. */
     function startGame(deckKey){
       State.deckKey = deckKey;
       State.cards = shuffle([...DECKS[deckKey]]);
@@ -404,18 +419,18 @@
       el.progress.textContent = String(State.index + 1);
     }
 
-    /* Renderdab kaks kaarti (järgmine + aktiivne) ja lõpetab pakis otsa saamisel menüüsse. */
+    /* Renderdab kaks kaarti (järgmine + aktiivne) ja lõpetab otsa saamisel menüüga. */
     function renderStack(){
       el.deck.innerHTML = "";
       const next = State.cards[State.index + 1];
       const top  = State.cards[State.index];
-      if(next) el.deck.appendChild(makeCard(next, true, "game", true));
-      if(top)  el.deck.appendChild(makeCard(top, false, "game", true));
+      if(next) el.deck.appendChild(makeCard(next, true, "game"));
+      if(top)  el.deck.appendChild(makeCard(top, false, "game"));
       if(!top){ showScreen("menu"); buildMenu(); }
     }
 
-    /* Loob ühe kaardielemendi ja lisab swipe handlerid ainult pealmisele kaardile. */
-    function makeCard(card, isBehind, mode, showStar){
+    /* Loob ühe kaardielemendi; “täheke” on klikitav ning peab dubleerima PARIM swipe tegevust. */
+    function makeCard(card, isBehind, mode){
       const wrap = document.createElement("div");
       wrap.className = "swipeCard";
       wrap.style.transform = isBehind ? "scale(0.96) translateY(10px)" : "translate(0,0)";
@@ -445,11 +460,23 @@
       wrap.appendChild(stampBack);
       wrap.appendChild(stampBest);
 
-      if(showStar){
-        const star = document.createElement("div");
-        star.className = "star";
-        star.textContent = "⭐";
-        wrap.appendChild(star);
+      if(mode === "game"){
+        const starBtn = document.createElement("button");
+        starBtn.className = "starBtn";
+        starBtn.type = "button";
+        starBtn.innerHTML = "<span>⭐</span>";
+
+        /* Blokeerib kaardi drag/pointercapture, et click oleks usaldusväärne. */
+        starBtn.addEventListener("pointerdown", (e)=>{ e.stopPropagation(); e.preventDefault(); });
+
+        /* Käivitab sama loogika mis swipe-up: PARIM + järgmine kaart. */
+        starBtn.addEventListener("pointerup", (e)=>{
+          e.stopPropagation(); e.preventDefault();
+          const top = el.deck.querySelector(".swipeCard:last-child");
+          if(top === wrap) commitSwipeGame(wrap, "PARIM");
+        });
+
+        wrap.appendChild(starBtn);
       }
 
       wrap.appendChild(inner);
@@ -461,11 +488,12 @@
       return wrap;
     }
 
-    /* Mängu swipe: vasak=TAGASI, parem=EDASI, üles=PARIM; hoiab thresholdid stabiilsed mobiilis. */
+    /* Mängu swipe: vasak=TAGASI, parem=EDASI, üles=PARIM; ignoreerib tähekese klikke. */
     function attachSwipeGame(cardEl, nextStamp, backStamp, bestStamp){
       let sx=0, sy=0, dx=0, dy=0, dragging=false;
 
       cardEl.addEventListener("pointerdown", (e)=>{
+        if(e.target && e.target.closest && e.target.closest(".starBtn")) return;
         dragging=true;
         cardEl.setPointerCapture(e.pointerId);
         sx=e.clientX; sy=e.clientY;
@@ -504,7 +532,7 @@
       });
     }
 
-    /* Rakendab swipe tulemuse: animatsioon + ajaloo/parimate salvestus + indeksi edasi liigutus. */
+    /* Rakendab swipe tulemuse: animatsioon + ajaloo/parimate salvestus + järgmise kaardi kuvamine. */
     function commitSwipeGame(cardEl, otsus){
       let tx=0, ty=0, rot=0;
       if(otsus==="EDASI"){ tx=520; ty=-40; rot=18; }
@@ -558,7 +586,7 @@
         const t=110;
         if(dx<-t) viewStep(-1);
         else if(dx>t) viewStep(+1);
-        else cardEl.style.transform="translate(0,0) rotate(0deg)";
+        else cardEl.style.transform = "translate(0,0) rotate(0deg)";
       });
     }
 
@@ -575,14 +603,14 @@
 
       const item = list[State.viewPos];
       if(!item){
-        const empty = makeCard({title:"Pole midagi", desc:"Alusta mängu ja tee swiped.", foot:"• " + dk}, false, "view", false);
+        const empty = makeCard({title:"Pole midagi", desc:"Alusta mängu ja tee swiped.", foot:"• " + dk}, false, "view");
         empty.querySelectorAll(".stamp").forEach(s => s.style.opacity = 0);
         host.appendChild(empty);
         updateButtons();
         return;
       }
 
-      const c = makeCard(item.card, false, "view", false);
+      const c = makeCard(item.card, false, "view");
       c.querySelectorAll(".stamp").forEach(s => s.style.opacity = 0);
 
       if(isHistory){
@@ -623,9 +651,10 @@
       updateViewPos();
     }
 
-    /* Menüü nupp viib alati tagasi pealehele; seal ei kuvata ühtegi nuppuriba. */
+    /* Menüü nupp viib alati tagasi pealehele. */
     el.btnMenu.addEventListener("click", ()=>{ showScreen("menu"); buildMenu(); });
 
+    /* Edasi/Tagasi nupud peavad viima järgmise/eelmise kaardini (sama mis swipe parem/vasak). */
     el.btnNext.addEventListener("click", ()=>{
       if(State.viewMode==="game"){
         const top = el.deck.querySelector(".swipeCard:last-child");
@@ -642,11 +671,6 @@
       } else if(State.viewMode==="history" || State.viewMode==="best"){
         viewStep(-1);
       }
-    });
-
-    el.btnBest.addEventListener("click", ()=>{
-      const top = el.deck.querySelector(".swipeCard:last-child");
-      if(top) commitSwipeGame(top, "PARIM");
     });
 
     /* Segab kaardid, et iga mäng oleks erinev. */
