@@ -62,11 +62,13 @@
       position:relative;
     }
     header{
-      padding:14px 16px;
-      display:flex; align-items:center; justify-content:center;
+      padding:14px 16px 10px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:8px;
       border-bottom:1px solid rgba(255,77,166,.22);
       background: linear-gradient(90deg, rgba(255,77,166,.18), rgba(0,0,0,.18));
-      min-height:64px;
+      min-height:86px;
+      text-align:center;
     }
 
     .brandBtn{
@@ -82,6 +84,7 @@
       font-size:22px;
       transition: font-size 140ms ease, transform 140ms ease, filter 140ms ease;
       user-select:none;-webkit-user-select:none;
+      line-height:1;
     }
     body[data-view="menu"] .brand{ font-size:44px; transform: translateY(1px); }
 
@@ -89,6 +92,15 @@
     body[data-view="menu"] .brandBtn:hover .brand{
       animation: logoShift 1.8s ease-in-out infinite alternate;
       text-shadow: 0 0 18px rgba(255,77,166,.45);
+    }
+
+    .tagline{
+      max-width: 460px;
+      color: rgba(255,233,245,.86);
+      font-weight:800;
+      font-size:12.5px;
+      line-height:1.25;
+      user-select:none;-webkit-user-select:none;
     }
 
     main{flex:1; display:flex; flex-direction:column; min-height:0}
@@ -248,6 +260,7 @@
       <button class="brandBtn" id="brandHome" type="button" aria-label="Avaleht">
         <div class="brand">Jutumasin</div>
       </button>
+      <div class="tagline">Lihtne kaardimäng kahele või rohkemale. Vali rubriik ja swipei kaarte kas edasi või tagasi.</div>
     </header>
 
     <main>
@@ -336,7 +349,6 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on su lemmik viis vabandada?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mida tahaksid koos kogeda?",foot:"• kohtingu küsimused"}
   ],
-
   "Spicy": [
     {title:"Küsimus",desc:"Mis on su lemmik viis flirtida?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su salajane turn-on?",foot:"• spicy"},
@@ -359,7 +371,6 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on su lemmik eelmäng?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid aeglast lähenemist või tahaksid vahele jätta?",foot:"• spicy"}
   ],
-
   "Couples": [
     {title:"Küsimus",desc:"Mis on meie suhte tugevus?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis harjumus meid ühendab?",foot:"• paaridele"},
@@ -373,7 +384,6 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on meie ühine hobi?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis on meie väärtused?",foot:"• paaridele"}
   ],
-
   "Party": [
     {title:"Küsimus",desc:"Tõsta käsi, kui oled 3+ päeva järjest joonud.",foot:"• peomäng"},
     {title:"Küsimus",desc:"Kes on täna kõige kõige rohkem alkoholi tarbinud",foot:"• peomäng"},
