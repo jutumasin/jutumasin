@@ -118,6 +118,8 @@
     .screen.active{display:flex; flex-direction:column; gap:14px}
 
     .grid{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+
+    /* NORMAL NUPUD (väikesed, ilma tekstuuri/animatsioonita) */
     .choice{
       padding:16px; border-radius:var(--r);
       background: linear-gradient(180deg, rgba(255,77,166,.10), rgba(0,0,0,.26));
@@ -131,6 +133,35 @@
     .choice:active{ background: linear-gradient(180deg, rgba(255,77,166,.06), rgba(0,0,0,.36)); transform: translateY(1px); }
     .choice h3{margin:0 0 8px 0; font-size:15px; font-weight:900}
     .choice p{margin:0; color:var(--muted); font-size:12px; line-height:1.25}
+    .choice.big{
+      grid-column:1 / -1;
+      min-height:120px;
+      text-align:center;
+      align-items:center;
+
+      border:1px solid transparent;
+
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='%23ff1f8f' fill-opacity='0.03'%3E%3Ctext x='24' y='110' font-size='64'%3E%E2%99%A5%3C/text%3E%3Ctext x='140' y='190' font-size='54'%3E%E2%99%A5%3C/text%3E%3Ctext x='170' y='78' font-size='44'%3E%E2%99%A5%3C/text%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(180deg, rgba(255,120,190,.22), rgba(0,0,0,.22));
+      background-repeat: repeat, no-repeat;
+      background-size: 260px 260px, auto;
+      background-position: 0 0, 0 0;
+    }
+    .choice.big h3{ font-size:20px; margin:0 0 8px 0; }
+    .choice.big p{ margin:0; }
+
+    @keyframes mixHearts {
+      from { background-position: 0 0, 0 0; }
+      to   { background-position: 0 -260px, 0 0; }
+    }
+    .choice.big:hover{
+      border-color: rgba(255,180,220,.45);
+      animation: mixHearts 1.8s linear infinite;
+    }
+    .choice.big:active{
+      animation:none;
+    }
 
     .menuWrap{flex:1; display:flex; flex-direction:column; gap:12px; min-height:0}
     .aboutRow{margin-top:auto; display:flex; align-items:center; justify-content:center; gap:10px;}
@@ -304,7 +335,7 @@
             <br><br>
             Ja andke niisama raha!
             <br><br>
-           <a href="https://paypal.me/rennoispoor" target="_blank" rel="noopener">donation link</a>
+            <a href="https://paypal.me/rennoispoor" target="_blank" rel="noopener">donation link</a>
           </div>
         </div>
       </section>
@@ -385,9 +416,6 @@ const DECKS = {
     {title:"Küsimus",desc:"Kui tihti sa soovid intiimne olla?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kudas sa kirjeldaksid mind teistele inimestele?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis kehaosa sind enda juures kõige rohkem häirib?",foot:"• kohtingu küsimused"},
-    
-    
-    
     {title:"Küsimus",desc:"Mida tahaksid kindlasti kogeda?",foot:"• kohtingu küsimused"}
   ],
   "Spicy": [
@@ -504,6 +532,8 @@ function buildMenu(){
   const hTotal = totalCount(State.histories);
   const bTotal = totalCount(State.bests);
   const items = [
+    { title:"MIX", sub:"kõik küsimused mixed", action:()=>startMixedGame(), big:true },
+
     { title:"Dating",  sub:"kohtinguks", action:()=>startGame("Dating") },
     { title:"Spicy",   sub:"vallatumatele", action:()=>startGame("Spicy") },
     { title:"Couples", sub:"paaridele", action:()=>startGame("Couples") },
@@ -514,7 +544,7 @@ function buildMenu(){
   el.menuGrid.innerHTML = "";
   items.forEach(it=>{
     const c=document.createElement("div");
-    c.className="choice";
+    c.className="choice" + (it.big ? " big" : "");
     c.innerHTML = `<h3>${it.title}</h3><p>${it.sub}</p>`;
     c.addEventListener("click", it.action);
     el.menuGrid.appendChild(c);
@@ -546,6 +576,20 @@ function startGame(deckKey){
   if(!State.histories[deckKey]) State.histories[deckKey] = [];
   if(!State.bests[deckKey]) State.bests[deckKey] = [];
   el.deckName.textContent = `Tüüp: ${deckKey}`;
+  showScreen("game");
+  renderStack();
+  updateProgress();
+  buildMenu();
+}
+
+function startMixedGame(){
+  State.deckKey = "MIX";
+  const mixed = [...DECKS["Dating"], ...DECKS["Spicy"], ...DECKS["Couples"]];
+  State.cards = shuffle([...mixed]);
+  State.index = 0;
+  if(!State.histories["MIX"]) State.histories["MIX"] = [];
+  if(!State.bests["MIX"]) State.bests["MIX"] = [];
+  el.deckName.textContent = "Tüüp: MIX";
   showScreen("game");
   renderStack();
   updateProgress();
