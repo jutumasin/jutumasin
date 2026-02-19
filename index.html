@@ -344,53 +344,76 @@
   <script>
 const DECKS = {
   "Dating": [
-    {title:"Küsimus",desc:"Mis on su lemmik datei mälestus?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on su lemmik kohtingu mälestus?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis tegevus teeb sind suhtes kõige õnnelikumaks?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Mis on su armastuskeel?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas eelistad kinke? Kallistusi? Komplimente?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mida sa minus esimesena märkasid?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kus on ideaalne kohtinguõhtu sinu jaoks?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis harjumus mul on, mis sulle meeldib?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis paneb sind suhtes turvaliselt tundma?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su unistuste reis kahekesi?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Kas eelistad musi ja kallistusi või suulisi ja kirjalikke armastus avaldusi?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su lemmik date koostegevus?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Millal sa tundsid, et klapp on olemas?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis kompliment sulle kõige rohkem meeldib?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas oled rohkem hommiku- või õhtuinimene?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Kas eelistad kallist või väga odavat kohtingut",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Mida sa ootad healt suhtelt?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas eelistad uhket ja kallist või odavat ja lihtsat kohtingut",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mida sa ootad parimalt suhtelt?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas eelistad spontaansust või planeerimist?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su lemmik viis kiindumust näidata?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas sa usud hingesugulastesse?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Kas eelistad kodust või aktiivset kohtingut?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Mis väike žest sind rõõmustab?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas eelistad kodus olla või välja saada?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on väike žest mis sind kergelt alati rõõmustab?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas oled armukade tüüp?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on parim kompliment, mida oled saanud?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas eelistad sügavaid vestlusi või nalja?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Milline on su ideaalne nädalavahetus kahekesi?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Kas naudid rohkem üllatusi või rutiini?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas naudid rohkem üllatusi või rutiini ja planeeritud tegevusi?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su lemmik ühine mälestus?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Kas eelistad avalikku või privaatset datei?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kuidas sulle meeldib stressi maandada?",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Mida tahaksid koos kindlasti kogeda?",foot:"• kohtingu küsimused"}
+    {title:"Küsimus",desc:"Mis sulle eelmistes suhetes kõige rohkem meeldis?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas sa hoiad kellegi vastu veel vimma?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on top 2 kahetsust su elus?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Parim lapsepõlvemälestus?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis sind viimati marru ajas?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Parim ja halvim moment seeaasta?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Parim asi mis sa oma vanematelt suhetest oled õppinud?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas sul on eelnevad suhted on olnud pikemad või lühikesemad?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas sul on kedagi, kellega sa kahetsed, et magasid?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas sul on kuulsus, kellega sa kohe magaksid, kui võimalus tekiks?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kui sa saaksid oma seksielus midagi rohkemat, mis see oleks?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Jaga midagi mis sind erutab, mida sa pole minuga veel jaganud?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kui tihti sa soovid intiimne olla?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kudas sa kirjeldaksid mind teistele inimestele?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis kehaosa sind enda juures kõige rohkem häirib?",foot:"• kohtingu küsimused"},
+    
+    
+    
+    {title:"Küsimus",desc:"Mida tahaksid kindlasti kogeda?",foot:"• kohtingu küsimused"}
   ],
   "Spicy": [
     {title:"Küsimus",desc:"Mis on su lemmik viis flirtida?",foot:"• spicy"},
+    {title:"Küsimus",desc:"Kas sa oled pigem dominante või passivne voodis?",foot:"• spicy"},
+    {title:"Küsimus",desc:"3 kohta kus sa sooviks seksida mis ei ole voodis?",foot:"• spicy"},
+    {title:"Küsimus",desc:"Mis sa ei ole veel kellegagi voodis teinud aga tahaks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su salajane turn-on?",foot:"• spicy"},
+    {title:"Küsimus",desc:"Parim aeg päeval seksiks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on lihtne kompliment mida sa tihti kuulda tahaks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kust sulle meeldib ,et sind puudutatakse?",foot:"• spicy"},
+    {title:"Tegevus",desc:"Vaadake üksteise silma kuni üks pilgutab",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid rohkem algatamist või meeldib kui teine algatab?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas sulle meeldib sosistamine?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su lemmik poos voodis?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas eelistad tulesid sees või hämarust?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis riietus on sinu meelest on eriti atraktiivne?",foot:"• spicy"},
-    {title:"Tegevus",desc:"Pane käsi teise reie peale",foot:"• spicy"},
+    {title:"Tegevus",desc:"See kes ette loeb saab käe panna teise reiele",foot:"• spicy"},
+    {title:"Küsimus",desc:"Mis on asi, mida sa kunagi voodis ei teeks, aga mis tundub erutav?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas sulle meeldib kiuslik flirt?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis paneb sind partneri juures sulama?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas sulle meeldib, kui partner juhib?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas tekstis flirtimine meeldib?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis teeb su enesekindlaks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas sulle meeldib rollimäng?",foot:"• spicy"},
+    {title:"Küsimus",desc:"Kui me tahaks midagi seksuaalset teha aga seksida ei saa. Mida me teeks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas eelistad vaikust või muusikat?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su lemmik koht kahekesi olla?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid pikalt silmsidet?",foot:"• spicy"},
@@ -414,7 +437,7 @@ const DECKS = {
     {title:"Tõsta käsi",desc:"Kui oled rohkem kui aasta joomata.",foot:"• peomäng"},
     {title:"Küsimus",desc:"Kes on täna kõige kõige rohkem alkoholi tarbinud",foot:"• peomäng"},
     {title:"Küsimus",desc:"Kes on teinud spontaanse reisi?",foot:"• peomäng"},
-    {title:"Tegevus",desc:"Kõik kes seeaasta reisinud ei ole seisavad püsti nüüd",foot:"• peomäng"},
+    {title:"Tegevus",desc:"Kõik kes seeaasta reisinud ei ole seisavad püsti nüüd järgmised kaks küsimust",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kes on saatnud eksile sõnumi öösel?",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kes on hiljaks jäänud kohtingule?",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kes on kunagi valetanud enda kohta?",foot:"• peomäng"},
@@ -422,6 +445,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on kõige kallim impulss ost olnud eurodes?",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:" Kui kardad ämblikke",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:" Kui oled kedagi siit suudlenud",foot:"• peomäng"},
+    {title:"Tõsta käsi",desc:" Kui oled midagi illegaalset teinud",foot:"• peomäng"},
     {title:"Küsimus",desc:"Kes on teinud peo meeldejäävaks?",foot:"• peomäng"}
   ]
 };
@@ -480,12 +504,12 @@ function buildMenu(){
   const hTotal = totalCount(State.histories);
   const bTotal = totalCount(State.bests);
   const items = [
-    { title:"Dating",  sub:"kohtinguks küsimused", action:()=>startGame("Dating") },
-    { title:"Spicy",   sub:"põnevamad küsimused", action:()=>startGame("Spicy") },
-    { title:"Couples", sub:"paaridele küsimused", action:()=>startGame("Couples") },
-    { title:"Party",   sub:"Mitmele küsimuseks", action:()=>startGame("Party") },
-    { title:"Ajalugu", sub:`mis sa siin enne swipinud oled (${hTotal})`, action:()=>openList("history") },
-    { title:"Parimad", sub:`sinu välja valitud (${bTotal})`, action:()=>openList("best") }
+    { title:"Dating",  sub:"kohtinguks", action:()=>startGame("Dating") },
+    { title:"Spicy",   sub:"vallatumatele", action:()=>startGame("Spicy") },
+    { title:"Couples", sub:"paaridele", action:()=>startGame("Couples") },
+    { title:"Party",   sub:"seltskonnale", action:()=>startGame("Party") },
+    { title:"Ajalugu", sub:`mis sa siin swipinud oled (${hTotal})`, action:()=>openList("history") },
+    { title:"Parimad", sub:`sinu likeitud (${bTotal})`, action:()=>openList("best") }
   ];
   el.menuGrid.innerHTML = "";
   items.forEach(it=>{
