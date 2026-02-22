@@ -94,6 +94,7 @@ const DECKS = {
   ],
   "Couples": [
     {title:"Küsimus",desc:"Mis aitab sul pärast tüli uuesti lähedust tunda?",foot:"• paaridele"},
+    {title:"Küsimus",desc:"Kas igapäevane hommikust ja head ööd tundub sulle armas või pigem üleliigne?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kas sa oled kiitnud midagi oma sõbrale oma paarilisest?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis teemal sul on kõige raskem teist inimest usaldada?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mida sa viimati kartsid teha, aga tegid siiski ära?",foot:"• paaridele"},
@@ -172,4 +173,5 @@ const TINTS = {
 window.DECKS = DECKS;
 
 window.TINTS = TINTS;
+
 
