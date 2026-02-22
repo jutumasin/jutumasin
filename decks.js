@@ -37,6 +37,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Kas sul on eelnevad suhted on olnud pikemad või lühikesemad?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas sul on kedagi, kellega sa kahetsed, et magasid?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas sul on kuulsus, kellega sa kohe magaksid, kui võimalus tekiks?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on asi, mida inimesed sinust alguses valesti eeldavad?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kui sa saaksid oma seksielus midagi rohkemat, mis see oleks?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Jaga midagi mis sind erutab, mida sa pole minuga veel jaganud?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kui tihti sa soovid intiimne olla?",foot:"• kohtingu küsimused"},
@@ -47,10 +48,14 @@ const DECKS = {
     {title:"Küsimus",desc:"Milline partneri kehaosa sulle kõige rohkem meeldib?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kui miski ei hoiaks sind Eestis, siis kus sa elaksid?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis ajas sind viimati nii naerma, et peaaegu oleksid püksi pissinud?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kui sõbrad peaksid sind kolme sõnaga kirjeldama, mis need oleks?",foot:"• kohtingu küsimused"}, 
     {title:"Küsimus",desc:"Millist kodutööd sa kõige rohkem vihkad?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Nimeta kaks asja oma “anti-bucket listist” – mida sa kindlasti teha ei taha.",foot:"• kohtingu küsimused"},
     {title:"Tegevus",desc:"Sosista mulle kõrva seksikalt ühe pesuvahendi nimi.",foot:"• kohtingu küsimused"},
-    {title:"Küsimus",desc:"Milline riietus on sinu arvates eriti atraktiivne?",foot:"• kohtingu küsimused"}
+    {title:"Küsimus",desc:"Milline riietus on sinu arvates eriti atraktiivne?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kas hääle atraktiivsus on sulle tähtis?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on kõige ootamatum kompliment, mida oled saanud?",foot:"• kohtingu küsimused"}, 
+    {title:"Küsimus",desc:"Mis on muster, mida sa ei taha enam oma suhetes korrata?",foot:"• kohtingu küsimused"}                        
   ],
   "Spicy": [
     {title:"Tegevus",desc:"Sosista mulle kõrva seksikalt ühe pesuvahendi nimi.",foot:"• spicy"},
@@ -82,7 +87,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on su lemmik koht kahekesi olla?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid pikalt silmsidet?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su lemmik eelmäng?",foot:"• spicy"},
-    {title:"Küsimus",desc:"Kas sind on kunagi kinni seotud?",foot:"• peomäng"},
+    {title:"Küsimus",desc:"Kas sind on kunagi kinni seotud?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid aeglast lähenemist või tahaksid vahele jätta?",foot:"• spicy"}
   ],
   "Couples": [
@@ -161,4 +166,5 @@ const TINTS = {
 };
 
 window.DECKS = DECKS;
+
 window.TINTS = TINTS;
