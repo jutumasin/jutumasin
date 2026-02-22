@@ -12,6 +12,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on su lemmik date koostegevus?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Millal sa tundsid, et klapp on olemas?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis kompliment sulle kõige rohkem meeldib?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Kohv või tee?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas oled rohkem hommiku- või õhtuinimene?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas eelistad uhket ja kallist või odavat ja lihtsat kohtingut",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mida sa ootad parimalt suhtelt?",foot:"• kohtingu küsimused"},
@@ -54,6 +55,7 @@ const DECKS = {
     {title:"Tegevus",desc:"Sosista mulle kõrva seksikalt ühe pesuvahendi nimi.",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Milline riietus on sinu arvates eriti atraktiivne?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas hääle atraktiivsus on sulle tähtis?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Milline väike luksus on sinu jaoks tegelikult väga oluline?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on kõige ootamatum kompliment, mida oled saanud?",foot:"• kohtingu küsimused"}, 
     {title:"Küsimus",desc:"Mis on muster, mida sa ei taha enam oma suhetes korrata?",foot:"• kohtingu küsimused"}                        
   ],
@@ -91,6 +93,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Kas naudid aeglast lähenemist või tahaksid vahele jätta?",foot:"• spicy"}
   ],
   "Couples": [
+    {title:"Küsimus",desc:"Mis aitab sul pärast tüli uuesti lähedust tunda?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kas sa oled kiitnud midagi oma sõbrale oma paarilisest?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis teemal sul on kõige raskem teist inimest usaldada?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mida sa viimati kartsid teha, aga tegid siiski ära?",foot:"• paaridele"},
@@ -103,6 +106,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Kuidas sa tahad, et sulle hoolivust näidatakse?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Milline on sinu ühise reisi unistus?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kuidas sa soovid, et me koos kvaliteetaega veedaks?",foot:"• paaridele"},
+    {title:"Küsimus",desc:"Mis on asi, mida sa tahaksid suhtes teadlikumalt teha?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kuidas jagame kohustusi?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis sind rahustab?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis on meie ühine hobi?",foot:"• paaridele"},
@@ -168,3 +172,4 @@ const TINTS = {
 window.DECKS = DECKS;
 
 window.TINTS = TINTS;
+
