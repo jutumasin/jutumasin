@@ -57,6 +57,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Kas hääle atraktiivsus on sulle tähtis?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Milline väike luksus on sinu jaoks tegelikult väga oluline?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on kõige ootamatum kompliment, mida oled saanud?",foot:"• kohtingu küsimused"}, 
+    {title:"Küsimus",desc:"Kumb versioon minust sulle rohkem meeldib — päriselus või chatis?",foot:"• kohtingu küsimused"}, 
     {title:"Küsimus",desc:"Mis on muster, mida sa ei taha enam oma suhetes korrata?",foot:"• kohtingu küsimused"}                        
   ],
   "Spicy": [
@@ -173,5 +174,6 @@ const TINTS = {
 window.DECKS = DECKS;
 
 window.TINTS = TINTS;
+
 
 
