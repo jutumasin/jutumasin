@@ -1,12 +1,16 @@
 const DECKS = {
   "Dating": [
     {title:"Küsimus",desc:"Mis on su lemmik kohtingu mälestus?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Millist nõu annaksid oma 18-aastasele minale?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis tegevus teeb sind suhtes kõige õnnelikumaks?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kas eelistad kinke? Kallistusi? Komplimente?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mida sa minus esimesena märkasid?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Kus on ideaalne kohtinguõhtu sinu jaoks?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis harjumus mul on, mis sulle meeldib?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis paneb sind suhtes turvaliselt tundma?",foot:"• kohtingu küsimused"},
+    {title:"Küsimus",desc:"Mis on asi, mida sa teed ainult siis kui oled üksi?", foot:"• kohtingu küsimused" },
+    {title:"Küsimus",desc:"Mida sa tahad elus veel ära õppida?", foot:"• kohtingu küsimused" },
+    {title:"Küsimus",desc:"Mis on kõige hullem kohtingulugu/kogemus, mida sa tead?", foot:"• kohtingu küsimused" },
     {title:"Küsimus",desc:"Kui su elu oleks film, mida publik karjuks, et sa praegu tegema peaksid?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su unistuste reis kahekesi?",foot:"• kohtingu küsimused"},
     {title:"Küsimus",desc:"Mis on su lemmik date koostegevus?",foot:"• kohtingu küsimused"},
@@ -62,6 +66,7 @@ const DECKS = {
   ],
   "Spicy": [
     {title:"Tegevus",desc:"Sosista mulle kõrva seksikalt ühe pesuvahendi nimi.",foot:"• spicy"},
+    {title:"Küsimus",desc:"Mis on su kõige julgemalt saadetud sõnum?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on su lemmik viis flirtida?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas sa oled pigem dominante või passivne voodis?",foot:"• spicy"},
     {title:"Küsimus",desc:"3 kohta kus sa sooviks seksida mis ei ole voodis?",foot:"• spicy"},
@@ -70,6 +75,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis on su salajane turn-on?",foot:"• spicy"},
     {title:"Küsimus",desc:"Parim aeg päeval seksiks?",foot:"• spicy"},
     {title:"Küsimus",desc:"Mis on lihtne kompliment mida sa tihti kuulda tahaks?",foot:"• spicy"},
+    {title:"Küsimus",desc:"Kas sa naeraksid või punastaksid kui su otsingute ajalugu nähtavaks teha?",foot:"• spicy"},
     {title:"Küsimus",desc:"Kust sulle meeldib ,et sind puudutatakse?",foot:"• spicy"},
     {title:"Tegevus",desc:"Vaadake üksteise silma kuni üks pilgutab",foot:"• spicy"},
     {title:"Küsimus",desc:"Kas naudid rohkem algatamist või meeldib kui teine algatab?",foot:"• spicy"},
@@ -94,6 +100,8 @@ const DECKS = {
     {title:"Küsimus",desc:"Kas naudid aeglast lähenemist või tahaksid vahele jätta?",foot:"• spicy"}
   ],
   "Couples": [
+    {title:"Küsimus",desc:"Kuidas sa tead, et mul on halb päev olnud?",foot:"• paaridele"},
+    {title:"Küsimus",desc:"Millise harjumuse, tegevuse või ütluse oled minult omandanud?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis aitab sul pärast tüli uuesti lähedust tunda?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kas igapäevane hommikust ja head ööd tundub sulle armas või pigem üleliigne?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kas sa oled kiitnud midagi oma sõbrale oma paarilisest?",foot:"• paaridele"},
@@ -104,6 +112,7 @@ const DECKS = {
     {title:"Küsimus",desc:"Mis sa arvad teeb meie suhet tugevaks?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis on tegevus, millega sulle varem meeldis tegeleda, kuid enam mitte?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kuidas lahendame tülisid?",foot:"• paaridele"},
+    {title:"Küsimus",desc:"Mis on meie ühine nõrkus?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Mis teeb meid heaks tiimiks?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Kuidas sa tahad, et sulle hoolivust näidatakse?",foot:"• paaridele"},
     {title:"Küsimus",desc:"Milline on sinu ühise reisi unistus?",foot:"• paaridele"},
@@ -124,12 +133,15 @@ const DECKS = {
     {title:"Küsimus",desc:"Kui sul oleks miljon eurot, mille peaksid kohe ära kulutama, mida sa sellega teeksid?",foot:"• paaridele"}
   ],
   "Party": [
+    {title:"Tõsta käsi",desc:"Kui oled kunagi laval esinenud.",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kui oled elus 4 päeva järjest joonud.",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kui oled alasti ujumas käinud.",foot:"• peomäng"},
-    {title:"Tõsta käsi",desc:"Kui oled viimase 7 päeva jooksul vaadanud pornot",foot:"• peomäng"},
+    {title:"Tõsta käsi",desc:"Kui oled viimase 7 päeva jooksul vaadanud pornot.",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kui oled rohkem kui aasta joomata.",foot:"• peomäng"},
-    {title:"Küsimus",desc:"Kes on täna kõige kõige rohkem alkoholi tarbinud",foot:"• peomäng"},
+    {title:"Küsimus",desc:"Kes on täna kõige kõige rohkem alkoholi tarbinud.",foot:"• peomäng"},
     {title:"Küsimus",desc:"Kes on teinud spontaanse reisi?",foot:"• peomäng"},
+    {title:"Tõsta käsi",desc:"Kui oled kunagi tööl valetanud, et puududa.",foot:"• peomäng"},
+    {title:"Tõsta käsi",desc:"Kui film on sind nutma pannud.",foot:"• peomäng"},
     {title:"Tegevus",desc:"Kõik kes seeaasta reisinud ei ole seisavad püsti nüüd järgmised kaks küsimust.",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kes on saatnud eksile sõnumi öösel?",foot:"• peomäng"},
     {title:"Tõsta käsi",desc:"Kes on hiljaks jäänud kohtingule?",foot:"• peomäng"},
@@ -174,6 +186,7 @@ const TINTS = {
 window.DECKS = DECKS;
 
 window.TINTS = TINTS;
+
 
 
 
